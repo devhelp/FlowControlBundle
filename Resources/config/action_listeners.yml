@@ -1,0 +1,23 @@
+services:
+
+    devhelp.flow_control.listener.flow_configuration:
+        class: Devhelp\FlowControlBundle\EventListener\FlowConfigurationListener
+        arguments:
+            - "@devhelp.flow_control.configuration_reader"
+        tags:
+            - { name: kernel.event_subscriber }
+
+    devhelp.flow_control.listener.flow_control:
+        class: Devhelp\FlowControlBundle\EventListener\FlowControlListener
+        arguments:
+            - "@devhelp.flow_control"
+            - "@devhelp.flow_control.current_steps"
+        tags:
+            - { name: kernel.event_subscriber }
+
+    devhelp.flow_control.listener.flow_steps_update:
+        class: Devhelp\FlowControlBundle\EventListener\FlowStepsUpdateListener
+        arguments:
+            - "@devhelp.flow_control.current_steps"
+        tags:
+            - { name: kernel.event_subscriber }

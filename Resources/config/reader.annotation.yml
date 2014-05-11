@@ -1,0 +1,10 @@
+services:
+    devhelp.flow_control.configuration_reader.annotation:
+        class:  Devhelp\FlowControlBundle\FlowConfiguration\Reader\AnnotationConfigurationReader
+        lazy:   true
+        public: false
+        arguments:
+            - "@annotation_reader"
+
+    devhelp.flow_control.configuration_reader:
+        alias:  devhelp.flow_control.configuration_reader.annotation

@@ -1,0 +1,35 @@
+services:
+
+    devhelp.flow_control.flow_step_builder:
+        class:  Devhelp\FlowControl\Flow\Builder\FlowStepBuilder
+        public: false
+
+    devhelp.flow_control.flow_builder:
+        class:  Devhelp\FlowControl\Flow\Builder\FlowBuilder
+        arguments:
+            - "@devhelp.flow_control.flow_step_builder"
+        calls:
+            - [setDefinitions, ['%devhelp.flow_control.flow_definitions%']]
+
+    devhelp.flow_control.flow_repository.lazy:
+        class:  Devhelp\FlowControl\Flow\Repository\LazyFlowRepository
+        public: false
+        arguments:
+            - "@devhelp.flow_control.flow_builder"
+
+    devhelp.flow_control:
+        class:  Devhelp\FlowControl\FlowControl
+        arguments:
+            - "@devhelp.flow_control.flow_repository"
+
+    devhelp.flow_control.current_steps.session:
+        class:  Devhelp\FlowControlBundle\CurrentSteps\CurrentSessionSteps
+        public: false
+        arguments:
+            - "@session"
+
+    devhelp.flow_control.flow_repository:
+        alias:  devhelp.flow_control.flow_repository.lazy
+
+    devhelp.flow_control.current_steps:
+        alias: devhelp.flow_control.current_steps.session
