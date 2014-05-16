@@ -147,7 +147,6 @@ class ExampleController
 
 Currently suggested way is to intercept NoValidStepsFoundException on 'kernel.exception' event and replace the Response
 
-
 ## Credits
 
 Brought to you by : Devhelp.pl (http://devhelp.pl)
