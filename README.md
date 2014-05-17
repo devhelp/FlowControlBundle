@@ -10,7 +10,7 @@ $ composer require 'devhelp/flow-control-bundle:dev-master'
 
 ## Purpose
 
-FlowControlBundle provider integration with [FlowControl library](https://github.com/devhelp/flow-control) regarding controller actions.
+FlowControlBundle provides integration with [FlowControl library](https://github.com/devhelp/flow-control) regarding controller actions.
 It allows you to define your actions as flow steps, meaning that user won't be able to enter an action unless he/she reaches expected step
 in your flow.
 
