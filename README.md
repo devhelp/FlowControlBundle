@@ -20,6 +20,9 @@ You can, for example:
 
 ## Usage
 
+There is a **sandbox app** available on [github](https://github.com/devhelp/FlowControlBundleSandbox) where you can take closer look at the
+bundle and how it can be used
+
 ### Define your flow in config.yml
 
 ```
