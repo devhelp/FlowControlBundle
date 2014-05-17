@@ -132,7 +132,7 @@ use Devhelp\FlowControlBundle\FlowConfiguration\Annotation\DisableAutocommit;
 class ExampleController
 {
     /**
-     * @Flow(name="my_flow", action="my_step")
+     * @Flow(name="my_flow", step="my_step")
      * @DisableAutocommit
      */
     public function fooAction()
