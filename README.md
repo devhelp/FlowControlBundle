@@ -106,7 +106,7 @@ class PaymentController
 
 ### Done!
 
-Now if you enter an url for action that is some flow step you're access will be restricted only if your move is valid
+Now if you enter an url for action that is a step in some flow, your access will be restricted if the move is not valid
 
 
 ## FAQ
@@ -125,7 +125,7 @@ in changing current step in the flow for every valid move
 Right now it is not configurable from the bundle itself (will be soon), but you can use CompilerPass to replace 
 'devhelp.flow_control.current_steps' service with custom implementation
 
-### I don't want my action to update current steps automatically
+### I don't want my action to automatically update current steps
 
 You can disable this in action configuration
 ```
@@ -145,6 +145,10 @@ class ExampleController
 }
 
 ```
+
+### How can I manually update my moves ?
+
+Take a look at the FlowStepsUpdateListener for guidance
 
 ### How can I customize what happens once no valid steps are found for the action ?
 
